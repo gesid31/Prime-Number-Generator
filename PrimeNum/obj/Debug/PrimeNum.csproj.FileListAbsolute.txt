@@ -1,0 +1,10 @@
+c:\users\siddh\source\repos\PrimeNum\PrimeNum\bin\Debug\PrimeNum.exe.config
+c:\users\siddh\source\repos\PrimeNum\PrimeNum\bin\Debug\PrimeNum.exe
+c:\users\siddh\source\repos\PrimeNum\PrimeNum\bin\Debug\PrimeNum.pdb
+c:\users\siddh\source\repos\PrimeNum\PrimeNum\obj\Debug\PrimeNum.csprojResolveAssemblyReference.cache
+c:\users\siddh\source\repos\PrimeNum\PrimeNum\obj\Debug\PrimeNum.PrimeGen.resources
+c:\users\siddh\source\repos\PrimeNum\PrimeNum\obj\Debug\PrimeNum.Properties.Resources.resources
+c:\users\siddh\source\repos\PrimeNum\PrimeNum\obj\Debug\PrimeNum.csproj.GenerateResource.Cache
+c:\users\siddh\source\repos\PrimeNum\PrimeNum\obj\Debug\PrimeNum.csproj.CoreCompileInputs.cache
+c:\users\siddh\source\repos\PrimeNum\PrimeNum\obj\Debug\PrimeNum.exe
+c:\users\siddh\source\repos\PrimeNum\PrimeNum\obj\Debug\PrimeNum.pdb
