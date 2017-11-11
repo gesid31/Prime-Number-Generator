@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace PrimeNum
@@ -15,35 +17,54 @@ namespace PrimeNum
 
         private void getPrime_Click(object sender, EventArgs e)
         {
-            getPrime.Enabled = false;
-            AddAll.Enabled = false;
+            btnGetPrime.Enabled = false;
+            btnAddAll.Enabled = false;
             watch.Start();//Start The Clock
+            Thread work = new Thread(SleepTime);
+            work.Start();
             int val = Convert.ToInt32(InsertVal.Text.ToString());
-            for (int i = 2; i <= val; i++)
+            foreach (var i in PrimeNum(val))
             {
-                if ((PrimeNum(i) == true))
-                {
-                    PrimeList.Items.Add(i.ToString());
-                }
+                PrimeList.Items.Add(i.ToString());
             }
             watch.Stop();//Stop the Clock
             timespan.Text = watch.Elapsed.TotalSeconds.ToString();
-            getPrime.Enabled = true;
-            AddAll.Enabled = true;
+            btnGetPrime.Enabled = true;
+            btnAddAll.Enabled = true;
         }
 
-        public static bool PrimeNum(int num)
+        private void SleepTime()
         {
-            bool PrimeNum = true;
-            int factor = num / 2;
-            for (int i = 2; i <= factor; i++)
+            Thread.Sleep(2000);
+        }
+
+        public static IEnumerable<int> PrimeNum(int num)
+        {
+            if (num > 1)
             {
-                if ((num % i) == 0)
+                yield return 2;
+                List<int> primes = new List<int>();
+                int ss = 3;
+                while (ss <= num)
                 {
-                    PrimeNum = false;
+                    Boolean prime = true;
+                    int qs = (int)Math.Sqrt(ss);
+                    for (int i = 0; i < primes.Count && primes[i] <= qs; i++)
+                    {
+                        if (ss % primes[i] == 0)
+                        {
+                            prime = false;
+                            break;
+                        }
+                    }
+                    if (prime)
+                    {
+                        primes.Add(ss);
+                        yield return ss;
+                    }
+                    ss += 2;
                 }
             }
-            return PrimeNum;
         }
 
         private void AddAll_Click(object sender, EventArgs e)

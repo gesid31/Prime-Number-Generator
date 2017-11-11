@@ -8,3 +8,13 @@ c:\users\siddh\source\repos\PrimeNum\PrimeNum\obj\Debug\PrimeNum.csproj.Generate
 c:\users\siddh\source\repos\PrimeNum\PrimeNum\obj\Debug\PrimeNum.csproj.CoreCompileInputs.cache
 c:\users\siddh\source\repos\PrimeNum\PrimeNum\obj\Debug\PrimeNum.exe
 c:\users\siddh\source\repos\PrimeNum\PrimeNum\obj\Debug\PrimeNum.pdb
+C:\Users\siddh\source\repos\PrimeNumGen\PrimeNum\bin\Debug\PrimeNum.exe.config
+C:\Users\siddh\source\repos\PrimeNumGen\PrimeNum\bin\Debug\PrimeNum.exe
+C:\Users\siddh\source\repos\PrimeNumGen\PrimeNum\bin\Debug\PrimeNum.pdb
+C:\Users\siddh\source\repos\PrimeNumGen\PrimeNum\obj\Debug\PrimeNum.csprojResolveAssemblyReference.cache
+C:\Users\siddh\source\repos\PrimeNumGen\PrimeNum\obj\Debug\PrimeNum.PrimeGen.resources
+C:\Users\siddh\source\repos\PrimeNumGen\PrimeNum\obj\Debug\PrimeNum.Properties.Resources.resources
+C:\Users\siddh\source\repos\PrimeNumGen\PrimeNum\obj\Debug\PrimeNum.csproj.GenerateResource.Cache
+C:\Users\siddh\source\repos\PrimeNumGen\PrimeNum\obj\Debug\PrimeNum.csproj.CoreCompileInputs.cache
+C:\Users\siddh\source\repos\PrimeNumGen\PrimeNum\obj\Debug\PrimeNum.exe
+C:\Users\siddh\source\repos\PrimeNumGen\PrimeNum\obj\Debug\PrimeNum.pdb
