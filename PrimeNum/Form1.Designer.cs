@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.InsertVal = new System.Windows.Forms.TextBox();
             this.btnGetPrime = new System.Windows.Forms.Button();
@@ -40,7 +41,10 @@
             this.timespan = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox = new System.Windows.Forms.GroupBox();
+            this.ErrorMsg = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -58,15 +62,17 @@
             this.InsertVal.Name = "InsertVal";
             this.InsertVal.Size = new System.Drawing.Size(210, 31);
             this.InsertVal.TabIndex = 1;
+            this.InsertVal.TextChanged += new System.EventHandler(this.InsertVal_TextChanged);
+            this.InsertVal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.InsertVal_KeyPress);
             // 
             // btnGetPrime
             // 
             this.btnGetPrime.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnGetPrime.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGetPrime.FlatAppearance.BorderSize = 2;
-            this.btnGetPrime.Location = new System.Drawing.Point(37, 91);
+            this.btnGetPrime.Location = new System.Drawing.Point(37, 106);
             this.btnGetPrime.Name = "btnGetPrime";
-            this.btnGetPrime.Size = new System.Drawing.Size(172, 81);
+            this.btnGetPrime.Size = new System.Drawing.Size(172, 94);
             this.btnGetPrime.TabIndex = 2;
             this.btnGetPrime.Text = "Get Prime Numbers";
             this.btnGetPrime.UseVisualStyleBackColor = true;
@@ -76,16 +82,16 @@
             // 
             this.PrimeList.FormattingEnabled = true;
             this.PrimeList.ItemHeight = 25;
-            this.PrimeList.Location = new System.Drawing.Point(37, 193);
+            this.PrimeList.Location = new System.Drawing.Point(37, 224);
             this.PrimeList.Name = "PrimeList";
             this.PrimeList.Size = new System.Drawing.Size(290, 329);
             this.PrimeList.TabIndex = 3;
             // 
             // btnAddAll
             // 
-            this.btnAddAll.Location = new System.Drawing.Point(424, 91);
+            this.btnAddAll.Location = new System.Drawing.Point(424, 122);
             this.btnAddAll.Name = "btnAddAll";
-            this.btnAddAll.Size = new System.Drawing.Size(164, 49);
+            this.btnAddAll.Size = new System.Drawing.Size(164, 62);
             this.btnAddAll.TabIndex = 4;
             this.btnAddAll.Text = "Add All";
             this.btnAddAll.UseVisualStyleBackColor = true;
@@ -93,9 +99,10 @@
             // 
             // Value
             // 
-            this.Value.Location = new System.Drawing.Point(389, 220);
+            this.Value.Location = new System.Drawing.Point(389, 251);
             this.Value.Name = "Value";
-            this.Value.Size = new System.Drawing.Size(218, 31);
+            this.Value.ReadOnly = true;
+            this.Value.Size = new System.Drawing.Size(225, 31);
             this.Value.TabIndex = 5;
             // 
             // label2
@@ -103,7 +110,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.PaleGreen;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(400, 169);
+            this.label2.Location = new System.Drawing.Point(400, 200);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(188, 29);
             this.label2.TabIndex = 6;
@@ -112,7 +119,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(368, 283);
+            this.label3.BackColor = System.Drawing.Color.Cyan;
+            this.label3.Location = new System.Drawing.Point(368, 314);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 25);
             this.label3.TabIndex = 7;
@@ -120,7 +128,7 @@
             // 
             // count
             // 
-            this.count.Location = new System.Drawing.Point(461, 281);
+            this.count.Location = new System.Drawing.Point(461, 312);
             this.count.Name = "count";
             this.count.ReadOnly = true;
             this.count.Size = new System.Drawing.Size(153, 31);
@@ -128,7 +136,7 @@
             // 
             // timespan
             // 
-            this.timespan.Location = new System.Drawing.Point(363, 432);
+            this.timespan.Location = new System.Drawing.Point(363, 463);
             this.timespan.Name = "timespan";
             this.timespan.ReadOnly = true;
             this.timespan.Size = new System.Drawing.Size(244, 31);
@@ -137,8 +145,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Crimson;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(353, 385);
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(353, 416);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(222, 31);
             this.label4.TabIndex = 10;
@@ -150,6 +160,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox.Controls.Add(this.ErrorMsg);
             this.groupBox.Controls.Add(this.PrimeList);
             this.groupBox.Controls.Add(this.label4);
             this.groupBox.Controls.Add(this.label1);
@@ -163,9 +174,24 @@
             this.groupBox.Controls.Add(this.Value);
             this.groupBox.Location = new System.Drawing.Point(12, 27);
             this.groupBox.Name = "groupBox";
-            this.groupBox.Size = new System.Drawing.Size(665, 552);
+            this.groupBox.Size = new System.Drawing.Size(665, 565);
             this.groupBox.TabIndex = 11;
             this.groupBox.TabStop = false;
+            // 
+            // ErrorMsg
+            // 
+            this.ErrorMsg.AutoSize = true;
+            this.ErrorMsg.BackColor = System.Drawing.Color.Cornsilk;
+            this.ErrorMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ErrorMsg.ForeColor = System.Drawing.Color.Crimson;
+            this.ErrorMsg.Location = new System.Drawing.Point(258, 83);
+            this.ErrorMsg.Name = "ErrorMsg";
+            this.ErrorMsg.Size = new System.Drawing.Size(0, 25);
+            this.ErrorMsg.TabIndex = 11;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // PrimeGen
             // 
@@ -181,6 +207,7 @@
             this.Text = "Prime Number Generator";
             this.groupBox.ResumeLayout(false);
             this.groupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -199,6 +226,8 @@
         private System.Windows.Forms.TextBox timespan;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox;
+        private System.Windows.Forms.Label ErrorMsg;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 
